@@ -35,20 +35,47 @@ During this Testathon, we’ll be showcasing:
 
 1. **Navigate** through the OrangeHRM website.  
 2. **Identify** bugs and potential issues.
-3. **KINTSUGI** follow the testing strategy in kintsugi.md, with the ff. details:
+3. **KINTSUGI** follow the testing strategy in kintsugi.md, with results written in a file, each with filename format "XX_{strategy_step_name}.md" (e.g., 03_negative_noise_testing.md, 04_targeted_exploration.md), with the ff. details:
     - Know Context: short Context Card (1 paragraph) + top-3 critical flows
     - Instrument & Observe: 
         - Use Playwright to navigate the page
         - Observe console in dev tool during actions
         - Observe endpoints in dev tool -> Networks tab if requests are appropriately sent with their required use case (e.g., edits should have PUT endpoint calls to a server)
         - Observe overall functionalities and flow-of-action if they match the displayed strings in the Web UI elements
-    - Make test cases using Context card from Know Context and add focus on the Instrument & Observe items for the following Principles:
-        - Negative & Noise
-        - Targeted Exploration
-        - Simulate Real Users
-        - Utilize Chaos
+        - **Quality Guidelines for Observation:**
+            - Record environment details (browser, OS) for all observations
+            - Document performance metrics during navigation
+            - Capture screenshots or evidence for unexpected behaviors
+            - Note any accessibility issues or console errors
+    - [Negative & noise, Targeted exploration, Simulate real users, Utilize chaos] Make test cases using Context card from Know Context and add focus on the Instrument & Observe items for the following Principles:
+        - **Negative & Noise**
+            - Quality Guidelines: Create clear, step-by-step instructions with realistic test data
+            - Test invalid inputs, boundary conditions, and error scenarios
+            - Document expected vs actual results with business impact assessment
+        - **Targeted Exploration**
+            - Quality Guidelines: Focus on critical business flows with estimated execution time
+            - Include prerequisites and environment setup requirements
+            - Provide detailed reproduction steps for any issues found
+        - **Simulate Real Users**
+            - Quality Guidelines: Create test cases that QA team can easily understand and execute
+            - Include realistic user scenarios and workflows
+            - Document user experience issues and usability concerns
+        - **Utilize Chaos**
+            - Quality Guidelines: Test edge cases with proper risk assessment
+            - Document security testing results (SQL injection, XSS attempts)
+            - Include performance stress testing observations
     - Grade & Prioritize - given the test case results from above
-    - Iterate & Automate - allow reuse of these test cases, follow what's written in kintsugi.md, and prioritize using this flow: Detect → Reproduce → Automate → Monitor 
+        - **Quality Guidelines for Grading:**
+            - Provide unique, descriptive summaries for all defects
+            - Justify severity levels with clear business impact analysis
+            - Include complete reproduction steps and environment details
+            - Attach screenshots or evidence for all reported issues
+    - Iterate & Automate - allow reuse of these test cases, follow what's written in kintsugi.md, and prioritize using this flow: Detect → Reproduce → Automate → Monitor
+        - **Quality Guidelines for Automation:**
+            - Ensure test cases are reproducible by QA team
+            - Provide automation recommendations with tool suggestions
+            - Include monitoring strategies for critical business flows
+            - Document lessons learned for future iterations 
 4. **Create separate, human-readable test case files** that QA can easily understand.  
 5. **Log defects** in the Excel file provided (on the sheet named ('Bug List')).
 
@@ -74,12 +101,26 @@ You can use **ExcelJS** to automate writing defects to this file.
 | **Other Details** | Additional notes or info |
 | **Workaround** | Temporary fix, if any |
 | **Artifacts (Screenshot / Logs)** | Path to screenshot or log file | you can use formula =HYPERLINK() for filepaths if you can
+---
+## ✅ Success Criteria
 
+### Minimum Requirements:
+- [ ] All 8 KINTSUGI phases completed with documentation
+- [ ] At least 3 critical business flows tested
+- [ ] Minimum 5 test cases created for QA team
+- [ ] All found defects logged in Excel with complete details
+- [ ] Security testing performed (SQL injection, XSS)
+- [ ] Performance observations documented
+
+### Quality Standards:
+- Test cases must be reproducible by QA team
+- Defects must include clear reproduction steps
+- Risk assessment completed with impact analysis
+- Automation recommendations provided
 ---
 
 ## 💡 Tips
 
-- Don’t overdo it — this event runs for **2 days**, so **manage your energy**.  
 - Focus on **quality over quantity**.  
 - Make sure your tests and bug reports are **clear, consistent, and reproducible**.  
 - Remember, the goal isn’t just to find bugs — it’s to **showcase great testing practices** using modern tools.
