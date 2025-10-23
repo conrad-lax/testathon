@@ -34,8 +34,21 @@ During this Testathon, we’ll be showcasing:
 ## 🧪 What You’ll Do
 
 1. **Navigate** through the OrangeHRM website.  
-2. **Identify** bugs and potential issues.  
-3. **Write simple automated test cases** using Playwright.  
+2. **Identify** bugs and potential issues.
+3. **KINTSUGI** follow the testing strategy in kintsugi.md, with the ff. details:
+    - Know Context: short Context Card (1 paragraph) + top-3 critical flows
+    - Instrument & Observe: 
+        - Use Playwright to navigate the page
+        - Observe console in dev tool during actions
+        - Observe endpoints in dev tool -> Networks tab if requests are appropriately sent with their required use case (e.g., edits should have PUT endpoint calls to a server)
+        - Observe overall functionalities and flow-of-action if they match the displayed strings in the Web UI elements
+    - Make test cases using Context card from Know Context and add focus on the Instrument & Observe items for the following Principles:
+        - Negative & Noise
+        - Targeted Exploration
+        - Simulate Real Users
+        - Utilize Chaos
+    - Grade & Prioritize - given the test case results from above
+    - Iterate & Automate - allow reuse of these test cases, follow what's written in kintsugi.md, and prioritize using this flow: Detect → Reproduce → Automate → Monitor 
 4. **Create separate, human-readable test case files** that QA can easily understand.  
 5. **Log defects** in the Excel file provided (on the sheet named ('Bug List')).
 
