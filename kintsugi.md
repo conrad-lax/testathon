@@ -113,7 +113,7 @@ Like the art of kintsugi, it focuses on finding broken parts and repairing them 
 
 > Focus: communicate findings in terms of user impact (revenue, churn, support load)
 
-## 8 
+## 8️⃣ Iterate & Automate
 - Turn lessons into automation:
 - Convert charters → repeatable tests
 - Integrate chaos checks in nightly builds
