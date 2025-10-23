@@ -16,8 +16,8 @@ Like the art of kintsugi, it focuses on finding broken parts and repairing them 
 
 | Letter | Meaning | Purpose |
 |--------|---------|---------|
-| K | Know Context | Clearly define what truly matters |
-| I | Instrument & Observe | Make invisible bugs visible |
+| K | Know Context | Clearly define what truly matters; what to prioritize |
+| I | Instrument & Observe | Make invisible bugs visible; what to observe, and how to observe it |
 | N | Negative & Noise | Ensure the system handles imperfect or noisy input |
 | T | Targeted Exploration | Perform short, mission-driven exploratory tests |
 | S | Simulate Real Users | Reproduce authentic user behavior |
@@ -30,13 +30,15 @@ Like the art of kintsugi, it focuses on finding broken parts and repairing them 
 ## 1️⃣ Know Context
 
 **Context Card:**  
-EC site *ShopEase* — the most critical functionality is that users can add items to the cart and complete payments.
+(e.g., Ecommerce site *ShopEase* — the most critical functionality is that users can add items to the cart and complete payments.)
 
 **Critical Flows:**
 
 1. Product Search → Add to Cart  
 2. Cart → Checkout → Payment  
 3. Account Registration → Order History Review
+
+> Goal: Identify important modules to prioritize for testing
 
 ---
 
@@ -49,7 +51,7 @@ EC site *ShopEase* — the most critical functionality is that users can add ite
 - User behavior logs (clicks, drop-off points)  
 - Front-end console error count  
 
-> Goal: Identify surface-level bugs.
+> Goal: Identify and standardize what files/objects to observe for N, T, S, U, and what tool will be used to observe them 
 
 ---
 
@@ -62,7 +64,7 @@ EC site *ShopEase* — the most critical functionality is that users can add ite
 - Payment attempt with intermittent network drop  
 - Behavior under browser ad-blockers enabled  
 
-> Focus: find fragile assumptions, edge cases, and unexpected failures
+> Focus: Find fragile assumptions, edge cases, and unexpected failures
 
 ---
 
@@ -111,6 +113,14 @@ EC site *ShopEase* — the most critical functionality is that users can add ite
 
 > Focus: communicate findings in terms of user impact (revenue, churn, support load)
 
+## 8 
+- Turn lessons into automation:
+- Convert charters → repeatable tests
+- Integrate chaos checks in nightly builds
+- Quarantine flaky tests & fix within sprint
+
+> Continuous loop:
+> Detect → Reproduce → Automate → Monitor
 ---
 
 ## N, T, S, U — Four Angles of Testing
